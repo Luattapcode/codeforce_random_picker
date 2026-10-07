@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codeforces Randomizer</title>
+    <!-- Font chữ đẹp & hiện đại -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome cho icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- File CSS riêng -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fa-solid fa-code"></i> CF Randomizer</h1>
+            <p>Chọn khoảng rating và chủ đề để random bài tập Codeforces</p>
+        </header>
+
+        <main class="card">
+            <!-- Bộ lọc Rating -->
+            <div class="filter-group">
+                <label><i class="fa-solid fa-layer-group"></i> Khoảng Rating:</label>
+                <div class="rating-inputs">
+                    <input type="number" id="minRating" value="800" step="100" placeholder="Min">
+                    <span>đến</span>
+                    <input type="number" id="maxRating" value="1400" step="100" placeholder="Max">
+                </div>
+            </div>
+
+            <!-- Bộ lọc Chủ đề (Tags) -->
+            <div class="filter-group">
+                <label><i class="fa-solid fa-tags"></i> Chủ đề (Tags): <span id="selectedCount" class="badge">0 đã chọn</span></label>
+                <div id="tagContainer" class="tag-container">
+                    <!-- Các tag sẽ được render tự động từ app.js -->
+                </div>
+            </div>
+
+            <!-- Nút Random -->
+            <button id="randomBtn" class="btn-primary">
+                <i class="fa-solid fa-dice"></i> Random Bài Ngay
+            </button>
+        </main>
+
+        <!-- Khu vực hiển thị kết quả -->
+        <div id="resultCard" class="card result-card hidden">
+            <div class="result-header">
+                <span id="problemRating" class="rating-badge">Rating: 1200</span>
+                <span id="problemTags" class="tags-list">dp, greedy</span>
+            </div>
+            <h2 id="problemTitle">Tên bài toán</h2>
+            <div class="result-actions">
+                <a id="problemLink" href="#" target="_blank" class="btn-secondary">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Làm bài trên Codeforces
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- File JavaScript riêng -->
+    <script src="app.js"></script>
+</body>
+</html>
